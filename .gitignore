@@ -1,0 +1,5 @@
+.env
+predictive_maintenance.db
+__pycache__/
+*.pyc
+.ipynb_checkpoints/Predictive_Maintenance_ML_Project-checkpoint.ipynb
