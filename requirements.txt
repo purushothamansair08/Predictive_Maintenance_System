@@ -10,5 +10,4 @@ matplotlib
 seaborn
 imbalanced-learn
 scipy
-psycopg2-binary
-python-dotenv
+
