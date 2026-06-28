@@ -4,16 +4,15 @@
 
 This project is an end-to-end industrial AI system developed to predict potential machine failures using operational sensor data.
 
-The platform combines machine learning, explainable AI, cloud database integration, and a real-time Streamlit interface to simulate an enterprise-grade predictive maintenance solution.
+The platform combines machine learning, explainable AI, and a real-time Streamlit interface to simulate an enterprise-grade predictive maintenance solution.
 
 The application uses:
 
 * LightGBM for predictive maintenance modeling
 * Streamlit for interactive web deployment
-* **Supabase PostgreSQL** for cloud-based prediction logging and historical analytics
 * SHAP Explainability for feature impact interpretation
 
-The system predicts machine failure risk based on operational conditions and stores prediction history securely in a cloud database.
+The system predicts machine failure risk based on operational conditions and provides maintenance recommendations.
 
 ---
 
@@ -24,7 +23,6 @@ The system predicts machine failure risk based on operational conditions and sto
 * Improve model performance using hyperparameter tuning
 * Create a real-time prediction platform
 * Deploy the application using Streamlit
-* Store prediction history in a cloud database
 * Build an industrial monitoring workflow
 * Add Explainable AI using SHAP
 * Generate operational health indicators
@@ -38,7 +36,7 @@ The system predicts machine failure risk based on operational conditions and sto
 
 AI4I 2020 Predictive Maintenance Dataset
 
-**Input Features**
+### Input Features
 
 * Machine Type
 * Air Temperature [K]
@@ -47,7 +45,7 @@ AI4I 2020 Predictive Maintenance Dataset
 * Torque [Nm]
 * Tool Wear [min]
 
-**Target Variable**
+### Target Variable
 
 * Machine Failure
 
@@ -64,8 +62,7 @@ AI4I 2020 Predictive Maintenance Dataset
 7. Threshold tuning
 8. Cross-validation
 9. SHAP explainability
-10. Cloud database integration
-11. Streamlit deployment
+10. Streamlit deployment
 
 ---
 
@@ -106,7 +103,7 @@ The engineered features improve predictive performance while SHAP explanations p
 
 The Random Search optimized LightGBM model was selected because it provides the best balance between precision and recall.
 
-**Performance**
+### Performance
 
 * Precision: **83.58%**
 * Recall: **82.35%**
@@ -145,30 +142,6 @@ The explainability layer improves trustworthiness and supports maintenance decis
 
 ---
 
-# ☁️ Cloud Database Integration
-
-The application uses **Supabase PostgreSQL** as a cloud-hosted database to store prediction history.
-
-Each prediction record includes:
-
-* Machine information
-* Input sensor values
-* Prediction result
-* Failure probability
-* Health score
-* Risk level
-* Timestamp
-
-Database features:
-
-* Automatic prediction logging
-* Cloud-based persistent storage
-* Automatic retention of the latest prediction records
-* Production-style database architecture
-* Ready for dashboard and analytics integration
-
----
-
 # 🖥️ System Architecture
 
 ```text
@@ -187,10 +160,7 @@ LightGBM Prediction Pipeline
 SHAP Explainability
    │
    ▼
-Supabase PostgreSQL
-   │
-   ▼
-Historical Prediction Storage
+Prediction Results
 ```
 
 ---
@@ -205,10 +175,6 @@ Historical Prediction Storage
 * XGBoost
 * SHAP
 * Streamlit
-* PostgreSQL
-* Supabase
-* psycopg2
-* python-dotenv
 * Joblib
 
 ---
@@ -220,9 +186,6 @@ Predictive_Maintenance_ML_Project/
 │
 ├── app.py
 ├── predict.py
-├── database.py
-├── .env (ignored from Git)
-├── .gitignore
 ├── full_system.pkl
 ├── requirements.txt
 ├── README.md
@@ -238,16 +201,6 @@ Install dependencies:
 
 ```bash
 pip install -r requirements.txt
-```
-
-Create a `.env` file:
-
-```env
-DB_HOST=your_supabase_host
-DB_PORT=5432
-DB_NAME=postgres
-DB_USER=postgres
-DB_PASSWORD=your_database_password
 ```
 
 Run the application:
@@ -269,8 +222,6 @@ Main libraries:
 * lightgbm
 * xgboost
 * shap
-* psycopg2-binary
-* python-dotenv
 * joblib
 
 ---
@@ -285,8 +236,6 @@ Main libraries:
 * Health score calculation
 * Risk categorization
 * Maintenance recommendations
-* Automatic cloud database logging
-* Historical prediction storage
 * SHAP-based Explainable AI
 
 ---
@@ -301,7 +250,6 @@ Main libraries:
 * Predictive maintenance scheduling
 * Alert notifications
 * Digital Twin integration
-* User authentication with Supabase
 
 ---
 
@@ -315,17 +263,11 @@ Main libraries:
 
 ✅ Explainable AI using SHAP
 
-✅ Cloud database using Supabase PostgreSQL
-
-✅ Automatic prediction history logging
-
 ✅ Streamlit deployment
 
 ✅ Health score and risk assessment
 
 ✅ Production-style modular architecture
-
-✅ Cloud-ready monitoring platform
 
 ---
 
